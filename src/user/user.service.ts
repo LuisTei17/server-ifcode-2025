@@ -1,8 +1,12 @@
-import { Injectable, ConflictException, NotFoundException } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import * as bcrypt from 'bcryptjs';
-import { User } from './user.entity';
+import {
+  Injectable,
+  ConflictException,
+  NotFoundException,
+} from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
+import * as bcrypt from "bcryptjs";
+import { User } from "./user.entity";
 
 @Injectable()
 export class UserService {
@@ -16,9 +20,9 @@ export class UserService {
     const existingUser = await this.userRepository.findOne({
       where: { email_usuario: userData.email_usuario },
     });
-    
+
     if (existingUser) {
-      throw new ConflictException('User with this email already exists');
+      throw new ConflictException("User with this email already exists");
     }
 
     const user = new User();
@@ -63,7 +67,7 @@ export class UserService {
   async updateUser(id: number, updateData: Partial<User>): Promise<User> {
     const user = await this.findById(id);
     if (!user) {
-      throw new NotFoundException('User not found');
+      throw new NotFoundException("User not found");
     }
 
     Object.assign(user, updateData);

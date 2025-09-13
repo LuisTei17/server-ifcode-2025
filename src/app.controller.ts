@@ -1,5 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get } from "@nestjs/common";
+import { AppService } from "./app.service";
 
 @Controller()
 export class AppController {
@@ -10,18 +10,18 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('health')
+  @Get("health")
   getHealth() {
     return {
-      status: 'ok',
+      status: "ok",
       timestamp: new Date().toISOString(),
       endpoints: {
-        'POST /auth/register': 'User registration',
-        'POST /auth/login': 'User login', 
-        'GET /auth/google': 'Google OAuth initiation',
-        'GET /auth/google/callback': 'Google OAuth callback',
-        'GET /auth/profile': 'Get user profile (requires JWT token)',
-      }
+        "POST /auth/register": "User registration",
+        "POST /auth/login": "User login",
+        "GET /auth/google": "Google OAuth initiation",
+        "GET /auth/google/callback": "Google OAuth callback",
+        "GET /auth/profile": "Get user profile (requires JWT token)",
+      },
     };
   }
 }

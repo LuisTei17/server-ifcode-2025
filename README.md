@@ -8,7 +8,7 @@ NestJS authentication server with Google OAuth and local authentication using bc
 - 🔑 JWT token authentication
 - 🌐 Google OAuth integration
 - 🔒 Password hashing with bcryptjs and salt
-- 📊 PostgreSQL database with TypeORM
+- 📊 MariaDB database with TypeORM
 - ✅ Input validation with class-validator
 
 ## Database Schema
@@ -56,7 +56,7 @@ cp .env.example .env
 # Edit .env with your database and Google OAuth credentials
 ```
 
-3. Set up PostgreSQL database and update credentials in .env
+3. Set up MariaDB database and update credentials in .env
 
 4. Run the application:
 ```bash
@@ -104,7 +104,7 @@ Visit `http://localhost:3000/auth/google` to initiate Google login flow.
 
 - **NestJS** - Node.js framework
 - **TypeORM** - Database ORM
-- **PostgreSQL** - Database
+- **MariaDB** - Database
 - **Passport** - Authentication middleware
 - **JWT** - JSON Web Tokens
 - **bcryptjs** - Password hashing
